@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama Cafe & Desi Kitchen — Homestyle Pakistani Food in Lahore</title>
+    <meta name="description" content="Experience authentic, fresh, and hygienic homestyle Pakistani dining at Mama Cafe & Desi Kitchen, Lahore. Explore our menu and order today.">
+    
+    <!-- Google Fonts & Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#141416',
+                            card: '#1e1f23',
+                            gold: '#d4af37',
+                            goldHover: '#b89528',
+                            cream: '#f9f6f0',
+                            terracotta: '#c85a32'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #141416;
+            color: #f9f6f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #edd382 50%, #b89528 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #b89528 100%);
+        }
+        .glass-header {
+            background: rgba(20, 20, 22, 0.88);
+            backdrop-filter: blur(12px);
+        }
+        .modal-blur {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-2xl font-serif font-bold tracking-wide text-white">MAMA <span class="text-brand-gold font-normal italic">Cafe</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+                <a href="#home" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-gold transition-colors">Our Story</a>
+                <a href="#menu" class="hover:text-brand-gold transition-colors">Menu</a>
+                <a href="#gallery" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+923000000000" class="px-4 py-2 text-sm font-semibold rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    <i class="fa-solid fa-phone mr-1"></i> Call Now
+                </a>
+                <a href="#reservation" class="px-5 py-2 text-sm font-semibold rounded-full gold-bg-gradient text-brand-dark hover:opacity-90 transition-opacity">
+                    Book Table
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-6 flex-col gap-4 text-white/90">
+            <a href="#home" class="mobile-link text-lg">Home</a>
+            <a href="#about" class="mobile-link text-lg">Our Story</a>
+            <a href="#menu" class="mobile-link text-lg">Menu</a>
+            <a href="#gallery" class="mobile-link text-lg">Gallery</a>
+            <a href="#contact" class="mobile-link text-lg">Contact</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="tel:+923000000000" class="text-center py-3 rounded-lg border border-brand-gold text-brand-gold">
+                    <i class="fa-solid fa-phone mr-2"></i> +92 300 0000000
+                </a>
+                <a href="#reservation" class="mobile-link text-center py-3 rounded-lg gold-bg-gradient text-brand-dark font-semibold">
+                    Book a Table
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80&w=1600" alt="Pakistani Desi Cuisine" class="w-full h-full object-cover opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-semibold tracking-wider uppercase">
+                    Homestyle Pakistani Goodness
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white leading-tight">
+                    Ghar Jaisa Swaad, <br><span class="gold-gradient">Dil Se Tayyar</span>
+                </h1>
+                <p class="text-white/70 text-lg max-w-xl font-light">
+                    Experience authentic Lahore flavors prepared with pure ingredients, traditional spices, and unmatched homestyle care at Mama Cafe & Kitchen.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                    <a href="#menu" class="px-8 py-3.5 rounded-full gold-bg-gradient text-brand-dark font-semibold shadow-lg shadow-brand-gold/20 hover:scale-105 transition-transform">
+                        Explore Our Menu
+                    </a>
+                    <a href="https://maps.google.com" target="_blank" class="px-8 py-3.5 rounded-full bg-white/5 border border-white/20 text-white font-medium hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Find Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-brand-gold/40 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800" alt="Signature Karahi" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-4 bg-brand-card border border-brand-gold/30 rounded-2xl p-4 shadow-xl flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+                        <i class="fa-solid fa-fire text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-white/60">Fresh Daily</p>
+                        <p class="text-sm font-bold text-white">Desi Ghee Karahi & Tawa Rotis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black/40 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&q=80&w=600" class="rounded-2xl object-cover h-64 w-full border border-white/10" alt="Cafe Interior">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=600" class="rounded-2xl object-cover h-64 w-full mt-8 border border-white/10" alt="Dining Ambiance">
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">About Mama Cafe</h2>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Serving Fresh, Hygienic & Tasty Meals Daily</h3>
+                    <p class="text-white/70 leading-relaxed font-light">
+                        Mama Cafe & Kitchen was created to bring back the comfort of clean, home-cooked food. From sizzling breakfast parathas with doodh patti to rich evening curries, every meal is prepared with warmth, attention, and high standards of cleanliness.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-brand-gold">100%</p>
+                            <p class="text-xs text-white/60">Fresh Ingredients</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif font-bold text-brand-gold">Hygiene</p>
+                            <p class="text-xs text-white/60">Top Kitchen Standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">Taste The Tradition</h2>
+            <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-2">Explore Our Menu</h3>
+            <p class="text-white/60 text-sm mt-2">Authentic Pakistani dishes cooked with handpicked spices and desi ghee.</p>
+        </div>
+
+        <!-- Menu Filters -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10" id="menu-filters">
+            <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-brand-gold bg-brand-gold text-brand-dark transition-all" data-category="all">All Items</button>
+            <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 text-white/80 hover:border-brand-gold transition-all" data-category="breakfast">Breakfast</button>
+            <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 text-white/80 hover:border-brand-gold transition-all" data-category="mains">Pakistani Mains</button>
+            <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-white/10 text-white/80 hover:border-brand-gold transition-all" data-category="tea">Chai & Beverages</button>
+        </div>
+
+        <!-- Menu Items Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-item bg-brand-card rounded-2xl p-4 border border-white/5 hover:border-brand-gold/30 transition-all group" data-category="breakfast">
+                <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&q=80&w=500" alt="Aloo Paratha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg font-bold text-white">Desi Aloo Paratha</h4>
+                    <span class="text-brand-gold font-serif font-bold">PKR 290</span>
+                </div>
+                <p class="text-xs text-white/60 mb-4">Crispy golden flatbread stuffed with spiced mashed potatoes and green herbs.</p>
+                <button onclick="openDetailModal('Desi Aloo Paratha', 'PKR 290', 'Crispy golden flatbread stuffed with spiced mashed potatoes, fresh coriander, and traditional green chilies.')" class="w-full py-2 bg-white/5 rounded-lg text-xs font-semibold text-white/80 hover:bg-brand-gold hover:text-brand-dark transition-colors">
+                    View Details
+                </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-item bg-brand-card rounded-2xl p-4 border border-white/5 hover:border-brand-gold/30 transition-all group" data-category="mains">
+                <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=500" alt="Chicken Karahi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg font-bold text-white">Special Chicken Karahi</h4>
+                    <span class="text-brand-gold font-serif font-bold">PKR 690</span>
+                </div>
+                <p class="text-xs text-white/60 mb-4">Tender chicken pieces cooked in tomatoes, ginger juliennes, and coarse black pepper.</p>
+                <button onclick="openDetailModal('Special Chicken Karahi', 'PKR 690', 'Traditional wok-cooked chicken curry prepared with fresh tomatoes, green chilies, and aromatic spices.')" class="w-full py-2 bg-white/5 rounded-lg text-xs font-semibold text-white/80 hover:bg-brand-gold hover:text-brand-dark transition-colors">
+                    View Details
+                </button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-item bg-brand-card rounded-2xl p-4 border border-white/5 hover:border-brand-gold/30 transition-all group" data-category="tea">
+                <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=500" alt="Doodh Patti Chai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-lg font-bold text-white">Special Doodh Patti</h4>
+                    <span class="text-brand-gold font-serif font-bold">PKR 150</span>
+                </div>
+                <p class="text-xs text-white/60 mb-4">Rich, thick milk tea slow-cooked to perfection with crushed cardamom.</p>
+                <button onclick="openDetailModal('Special Doodh Patti', 'PKR 150', 'Pure milk brewed tea with strong tea leaves and green cardamom for an authentic aroma.')" class="w-full py-2 bg-white/5 rounded-lg text-xs font-semibold text-white/80 hover:bg-brand-gold hover:text-brand-dark transition-colors">
+                    View Details
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-black/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">Visual Feast</h2>
+                <h3 class="text-3xl font-serif font-bold text-white mt-2">Food & Ambiance Gallery</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=500" class="rounded-xl h-60 w-full object-cover hover:opacity-80 cursor-pointer transition-opacity" alt="Desi Dish" onclick="openImageModal(this.src)">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=500" class="rounded-xl h-60 w-full object-cover hover:opacity-80 cursor-pointer transition-opacity" alt="Salad" onclick="openImageModal(this.src)">
+                <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=500" class="rounded-xl h-60 w-full object-cover hover:opacity-80 cursor-pointer transition-opacity" alt="Dosa/Paratha" onclick="openImageModal(this.src)">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=500" class="rounded-xl h-60 w-full object-cover hover:opacity-80 cursor-pointer transition-opacity" alt="BBQ" onclick="openImageModal(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Reservation Form Section -->
+    <section id="reservation" class="py-20 max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="bg-brand-card rounded-3xl p-8 border border-brand-gold/20 shadow-2xl">
+            <div class="text-center mb-8">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">Reservations</h2>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mt-1">Book a Table / Order Inquiry</h3>
+            </div>
+            <form id="booking-form" onsubmit="handleFormSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" id="cust-name" required placeholder="Your Full Name" class="bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                <input type="tel" id="cust-phone" required placeholder="Phone Number" class="bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                <input type="date" required class="bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+                <select class="bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white/80 focus:outline-none focus:border-brand-gold">
+                    <option>1 - 2 Guests</option>
+                    <option>3 - 5 Guests</option>
+                    <option>6+ Guests (Family)</option>
+                </select>
+                <textarea border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold md:col-span-2 placeholder="Special Requests or Order Details" rows="3" class="bg-brand-dark border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold md:col-span-2"></textarea>
+                <button type="submit" class="md:col-span-2 py-3.5 rounded-xl gold-bg-gradient text-brand-dark font-bold hover:opacity-90 transition-opacity">
+                    Submit Inquiry Request
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-black text-white/70 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10">
+            <div>
+                <h4 class="text-xl font-serif font-bold text-white mb-4">MAMA Cafe & Kitchen</h4>
+                <p class="text-xs text-white/60 leading-relaxed mb-4">Authentic Pakistani taste prepared under strict hygiene standards for families, students, and professionals in Lahore.</p>
+                <p class="text-xs text-white/40">© 2026 Mama Cafe Lahore. All Rights Reserved.</p>
+            </div>
+            <div>
+                <h5 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact Info</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Lahore, Punjab, Pakistan</li>
+                    <li><i class="fa-solid fa-phone text-brand-gold mr-2"></i> +92 300 0000000</li>
+                    <li><i class="fa-solid fa-clock text-brand-gold mr-2"></i> Open Daily: 8:00 AM - 11:00 PM</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h5>
+                <div class="flex flex-col gap-2 text-sm">
+                    <a href="#menu" class="hover:text-brand-gold">Online Menu</a>
+                    <a href="#reservation" class="hover:text-brand-gold">Table Reservation</a>
+                    <a href="https://www.foodpanda.pk" target="_blank" class="hover:text-brand-gold">Order via Foodpanda</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 bg-black/80 modal-blur z-50 hidden items-center justify-center p-4">
+        <div class="bg-brand-card max-w-md w-full rounded-2xl p-6 border border-brand-gold/30 relative">
+            <button onclick="closeDetailModal()" class="absolute top-4 right-4 text-white/60 hover:text-white text-xl">&times;</button>
+            <h3 id="modal-title" class="text-2xl font-serif font-bold text-white mb-1"></h3>
+            <p id="modal-price" class="text-brand-gold font-bold mb-4"></p>
+            <p id="modal-desc" class="text-sm text-white/70 mb-6"></p>
+            <a href="tel:+923000000000" class="block text-center py-3 rounded-xl gold-bg-gradient text-brand-dark font-bold">Call to Order Now</a>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black/90 modal-blur z-50 hidden items-center justify-center p-4" onclick="closeImageModal()">
+        <img id="enlarged-img" src="" class="max-w-full max-h-[85vh] rounded-xl border border-white/20">
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile Drawer Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Menu Filter Switcher
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-brand-dark');
+                    b.classList.add('text-white/80');
+                });
+                btn.classList.add('bg-brand-gold', 'text-brand-dark');
+                btn.classList.remove('text-white/80');
+
+                const cat = btn.getAttribute('data-category');
+                menuItems.forEach(item => {
+                    if (cat === 'all' || item.getAttribute('data-category') === cat) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modals Logic
+        function openDetailModal(title, price, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal-desc').innerText = desc;
+            const modal = document.getElementById('detail-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeDetailModal() {
+            const modal = document.getElementById('detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function openImageModal(src) {
+            document.getElementById('enlarged-img').src = src;
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            alert(`Thank you ${name}! Your inquiry has been logged. Please call us directly to confirm instantly.`);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
